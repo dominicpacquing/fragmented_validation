@@ -32,7 +32,7 @@ Usage
 
 ### Validate single attribute
 
-      person.email_valid?
+      person.valid_email?
 
 #### Validate multiple attributes
 

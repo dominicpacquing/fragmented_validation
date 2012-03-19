@@ -19,25 +19,30 @@ Or install it yourself as:
 
 Usage
 ============
+
 ## Getting Started
 
 ### Include the FragmentedValidation module by calling the 'fragmented_validation' in your model.
 
-   class User < ActiveRecord::Base
-      fragmented_validation
-   end
+
+
+      class User < ActiveRecord::Base
+          fragmented_validation
+       end
 
 ### Validate single attribute
 
-  person.email_valid?
+      person.email_valid?
 
 #### Validate multiple attributes
 
-  person.frag_validation_on(:username, :email)
+
+
+    person.frag_validation_on(:username, :email)
 
   or
 
-  person.frag_validation_except(:password)
+    person.frag_validation_except(:password)
 
 Contributing
 ============
@@ -47,3 +52,5 @@ Contributing
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+

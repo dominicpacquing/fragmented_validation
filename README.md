@@ -1,9 +1,10 @@
-# FragmentedValidation
+Fragmented Validation
+============
 
-TODO: Write a gem description
+FragmentedValidation allows your model to only validate selected attributes.
 
-## Installation
-
+Installation
+============
 Add this line to your application's Gemfile:
 
     gem 'fragmented_validation'
@@ -16,11 +17,22 @@ Or install it yourself as:
 
     $ gem install fragmented_validation
 
-## Usage
+Usage
+============
+### Validate single attribute
 
-TODO: Write usage instructions here
+  person.email_valid?
 
-## Contributing
+### Validate multiple attributes
+
+  person.frag_validation_on(:username, :email)
+
+  or
+
+  person.frag_validation_except(:password)
+
+Contributing
+============
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)

@@ -38,11 +38,11 @@ Usage
 
 
 
-    person.frag_validation_on(:username, :email)
+    person.fragmented_validation_on(:username, :email)
 
   or
 
-    person.frag_validation_except(:password)
+    person.fragmented_validation_except(:password)
 
 Contributing
 ============

@@ -13,19 +13,19 @@ describe FragmentedValidation do
       person.should respond_to(:valid_username?, :valid_password?)
     end
 
-    describe "#frag_validation" do
+    describe "#fragmented_validation" do
       it "should only validate the passed attribute names" do
          person.password = ""
          person.username = ""
 
-         person.frag_validation(:username, :password).should be_false
+         person.fragmented_validation(:username, :password).should be_false
          person.errors[:email].should be_empty
          person.errors[:password].should_not be_empty
          person.errors[:username].should_not be_empty
       end
 
       it "should ignore unknown attributes" do
-        person.frag_validation(:ghost_method, :bad_method).should be_true
+        person.fragmented_validation(:ghost_method, :bad_method).should be_true
       end
     end
 
@@ -34,7 +34,7 @@ describe FragmentedValidation do
          person.password = ""
          person.username = "myusername"
          person.email = "test@mail.com"
-         person.frag_valid_except(:password).should be_true
+         person.fragmented_validation_except(:password).should be_true
       end
     end
 
@@ -45,7 +45,7 @@ describe FragmentedValidation do
         person.username = "myusername"
         person.email = ""
 
-        person.frag_valid_on(:username, :password).should be_true
+        person.fragmented_validation_on(:username, :password).should be_true
       end
     end
 end

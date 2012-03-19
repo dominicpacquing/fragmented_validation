@@ -4,7 +4,7 @@ require File.expand_path('../lib/fragmented_validation/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Paul Pacquing"]
   gem.email         = ["dominicpacquing@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
+  gem.description   = %q{}
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = ""
 
@@ -14,4 +14,9 @@ Gem::Specification.new do |gem|
   gem.name          = "fragmented_validation"
   gem.require_paths = ["lib"]
   gem.version       = FragmentedValidation::VERSION
+
+  gem.add_development_dependency "rspec", "~> 2.6"
+  gem.add_development_dependency "activemodel"
+
 end
+

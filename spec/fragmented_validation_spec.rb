@@ -3,8 +3,10 @@ require 'spec_helper'
 describe FragmentedValidation do
 
     let(:person) do
-        Person.send(:include, FragmentedValidation::Core)
-        Person.new
+        User.class_eval do
+          fragmented_validation
+        end
+        User.new
     end
 
     it "should generate valid_\#{attribute}? methods" do
@@ -32,7 +34,6 @@ describe FragmentedValidation do
          person.password = ""
          person.username = "myusername"
          person.email = "test@mail.com"
-
          person.frag_valid_except(:password).should be_true
       end
     end

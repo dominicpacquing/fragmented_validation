@@ -1,13 +1,17 @@
 module FragmentedValidation
   module Core
     def self.included(base)
-      base.class_eval do
-        include InstanceMethods
-        attributes = self.new.attributes.keys
-        attributes.each do |key|
-          define_method "valid_#{key}?" do
-            frag_valid_on key
-          end
+      base.extend ClassMethods
+    end
+  end
+  
+  module ClassMethods
+    def fragmented_validation
+      include InstanceMethods
+      attributes = self.new.attributes.keys
+      attributes.each do |key|
+        define_method "valid_#{key}?" do
+          frag_valid_on key
         end
       end
     end
@@ -19,7 +23,7 @@ module FragmentedValidation
     end
 
     def frag_valid_except(*attrs)
-      frag_validation(attributes.keys - attrs)
+      frag_validation(attributes.keys - attrs.map{|att| att.to_s})
     end
 
     def frag_validation(*attrs)

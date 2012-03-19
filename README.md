@@ -19,11 +19,17 @@ Or install it yourself as:
 
 Usage
 ============
-### Validate single attribute
+### Include the FragmentedValidation module by calling the 'fragmented_validation' in your model.
+e.g.
+
+  class User < ActiveRecord::Base
+    fragmented_validation
+  ..
+#### Validate single attribute
 
   person.email_valid?
 
-### Validate multiple attributes
+#### Validate multiple attributes
 
   person.frag_validation_on(:username, :email)
 

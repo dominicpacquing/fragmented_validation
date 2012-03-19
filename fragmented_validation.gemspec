@@ -15,8 +15,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = FragmentedValidation::VERSION
 
+  gem.add_development_dependency "bundler", ">= 1.0.0"
   gem.add_development_dependency "rspec", "~> 2.6"
-  gem.add_development_dependency "activemodel"
-
+  gem.add_development_dependency "sqlite3-ruby"
+  gem.add_dependency "activerecord", "~> 3.0"
 end
 

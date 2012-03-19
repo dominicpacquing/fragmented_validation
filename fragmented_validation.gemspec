@@ -4,7 +4,7 @@ require File.expand_path('../lib/fragmented_validation/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Paul Pacquing"]
   gem.email         = ["dominicpacquing@gmail.com"]
-  gem.description   = %q{}
+  gem.description   = %q{FragmentedValidation allows your model to only validate selected attributes.}
   gem.summary       = %q{}
   gem.homepage      = "https://github.com/dominicpacquing/fragmented_validation"
 
